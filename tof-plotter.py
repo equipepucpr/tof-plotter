@@ -203,15 +203,15 @@ try:
 
             color = Color()
 
-            p = Circle((0,0), ((x2[1] - x1[1])**2.0 + (y2[1] - y1[1])**2.0)**(1.0/2.0)/2.0, color = color, fill = False)
+            p = Circle((0,0), ((x2[1] - x1[1])**2.0 + (y2[1] - y1[1])**2.0)**(1.0/2.0)/2.0, color = color, fill = False, linestyle='-.')
             ax.add_patch(p)
             pathpatch_2d_to_3d(p, z=0 , normal = normal)
             pathpatch_translate(p, (x[1], y[1], z[1]))
 
-            ax.plot(x1, y1, color=color, zs=z)
-            ax.plot(x2, y2, color=color, zs=z)
-            ax.plot(x3, y, color=color, zs=z3)
-            ax.plot(x4, y, color=color, zs=z4)
+            ax.plot(x1, y1, color=color, zs=z, linestyle='--')
+            ax.plot(x2, y2, color=color, zs=z, linestyle='--')
+            ax.plot(x3, y, color=color, zs=z3, linestyle='--')
+            ax.plot(x4, y, color=color, zs=z4, linestyle='--')
             ax.plot([sensorX], [sensorY], marker='o', markersize=4, color=color, zs=sensorZ)
     input("Press enter to continue...")
 
